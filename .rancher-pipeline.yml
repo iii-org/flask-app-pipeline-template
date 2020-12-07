@@ -29,7 +29,7 @@ stages:
     - applyAppConfig:
         catalogTemplate: cattle-global-data:iii-dev-charts3-web
         version: 0.1.0
-        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-app-web-test1
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test1
         targetNamespace: p-v2nzs-pipeline
         answers:
           web.type: uwsgi-flask
@@ -41,7 +41,7 @@ stages:
     - applyAppConfig:
         catalogTemplate: cattle-global-data:iii-dev-charts3-web
         version: 0.1.0
-        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-app-web-test2
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test2
         targetNamespace: p-v2nzs-pipeline
         answers:
           web.type: uwsgi-flask
