@@ -28,7 +28,9 @@ stages:
           # web參數設定
           web.type: uwsgi-flask
           web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
+          web.tag: latest
           checkmarx.enabled: true
+          newman.enabled: false
   
   # (選擇性)部屬使用者的資料庫
   - name: Deploy db
