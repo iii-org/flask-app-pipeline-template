@@ -10,18 +10,21 @@ pylint==1.6.5
 PyMySQL==0.6.7
 ```
 2. (選擇性)將資料庫的匯出檔案放入到db之內
+```
+若db資料夾內無任何匯出檔案則會有一個乾淨全新的資料庫
+```
 
 ## (選擇性)要求安裝資料庫
 * `資料庫連線HOST`: {這個專案名稱}-{專案分支}-{資料庫型態}-db-svc
 ```
 例如:
-1. 專案名稱: flask-app-pipeline-template
-2. 專案分支: master
-3. 資料庫型態: `mariadb`
+1. 專案名稱: flask-app-pipeline-template  
+2. 專案分支: master  
+3. 資料庫型態: mariadb  
   
 則資料庫連線HOST: `flask-app-pipeline-template-master-mariadb-db-svc`
 ```
-`flask-app-pipeline-template-master-`
 * `使用者帳號`: 在專案設定時設定的帳號
 * `使用者密碼`: 在專案設定時設定的密碼
+* `資料庫的PORT`: `為資料庫型態的預設PORT`
 
