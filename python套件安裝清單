@@ -1,0 +1,2 @@
+pylint==1.6.5
+PyMySQL==0.6.7
