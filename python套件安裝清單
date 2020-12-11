@@ -1,2 +1,8 @@
-pylint==1.6.5
-PyMySQL==0.6.7
+urllib3
+line-bot-sdk
+flask-mqtt
+flask
+flask-socketio
+flask-bootstrap
+mysqlclient
+flask-cors
