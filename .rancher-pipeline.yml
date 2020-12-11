@@ -22,8 +22,10 @@ stages:
         answers:
           web.type: uwsgi-flask
           web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
+          # 程式碼掃描
+          checkmarx.enabled: true
   
-  # 單一專案多個資料庫部屬(1/3)
+  # (選擇性)部屬使用者的資料庫
   - name: Deploy db
     steps:
       - applyAppConfig:
