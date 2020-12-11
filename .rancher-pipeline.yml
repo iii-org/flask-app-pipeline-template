@@ -20,10 +20,14 @@ stages:
         name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
         targetNamespace: p-v2nzs-pipeline
         answers:
+          # 基礎pipeline參數
+          git.url: ${CICD_GIT_URL}
+          git.branch: ${CICD_GIT_BRANCH}
+          git.commitID: ${CICD_GIT_COMMIT}
+          git.repoName: ${CICD_GIT_REPO_NAME}
+          # web參數設定
           web.type: uwsgi-flask
           web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
-          # 程式碼掃描
-          git.url: ${CICD_GIT_URL}
           checkmarx.enabled: true
   
   # (選擇性)部屬使用者的資料庫
