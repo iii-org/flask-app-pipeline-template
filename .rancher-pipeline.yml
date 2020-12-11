@@ -11,30 +11,39 @@ stages:
       env:
         PLUGIN_INSECURE: "true"
 
-  # 對單一容器部屬進行測試
-  - name: Deploy app-web-test1
+  # 部屬使用者應用(app)
+  - name: Deploy app-web
     steps:
     - applyAppConfig:
         catalogTemplate: cattle-global-data:iii-dev-charts3-web
         version: 0.1.0
-        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-test1
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
         targetNamespace: p-v2nzs-pipeline
         answers:
           web.type: uwsgi-flask
           web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
   
-    # 對單一容器部屬進行測試(checkmarx)
-  - name: Deploy app-web-test2
+  # 單一專案多個資料庫部屬(1/3)
+  - name: Deploy db
     steps:
-    - applyAppConfig:
-        catalogTemplate: cattle-global-data:iii-dev-charts3-web
-        version: 0.1.0
-        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-db
-        targetNamespace: p-v2nzs-pipeline
-        answers:
-          web.type: uwsgi-flask
-          web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
-          checkmarx.enabled: false
+      - applyAppConfig:
+          catalogTemplate: cattle-global-data:iii-dev-charts3-db
+          version: 0.1.0
+          name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
+          targetNamespace: p-v2nzs-pipeline
+          answers:
+            # 這裡是為了50與140環境測試
+            git.host: "10.50.1.53"
+            # 這裡是為了告訴要處理的git來源為何
+            git.repoName: ${CICD_GIT_REPO_NAME}
+            git.branch: ${CICD_GIT_BRANCH}
+            db.type: mariadb
+            # 使用者資料庫管理密碼
+            db.username: bear
+            db.password: bearisbear
+            # 使用者初始想要建立的資料庫名稱
+            db.name: health
+
 
   #- name: Deploy simple-no-db
   #  steps:
