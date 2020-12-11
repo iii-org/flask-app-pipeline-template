@@ -17,7 +17,7 @@ stages:
     - applyAppConfig:
         catalogTemplate: cattle-global-data:iii-dev-charts3-web
         version: 0.1.0
-        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
+        name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-web
         targetNamespace: p-v2nzs-pipeline
         answers:
           # 基礎pipeline參數
