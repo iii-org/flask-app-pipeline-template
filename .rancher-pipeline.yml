@@ -47,6 +47,7 @@ stages:
   #          git.repoName: ${CICD_GIT_REPO_NAME}
   #          git.branch: ${CICD_GIT_BRANCH}
   #          db.type: mariadb
+  #          db.gui: true
   #          # 使用者資料庫管理密碼
   #          db.username: bear
   #          db.password: bearisbear
