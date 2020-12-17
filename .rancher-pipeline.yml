@@ -27,7 +27,8 @@ stages:
           git.repoName: ${CICD_GIT_REPO_NAME}
           # web參數設定
           web.type: uwsgi-flask
-          web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
+          # 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
+          web.image: ${CICD_IMAGE}
           web.tag: latest
           checkmarx.enabled: false
           newman.enabled: false
