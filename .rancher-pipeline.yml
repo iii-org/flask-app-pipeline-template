@@ -18,7 +18,8 @@ stages:
         catalogTemplate: cattle-global-data:iii-dev-charts3-web
         version: 0.1.0
         name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-web
-        targetNamespace: p-v2nzs-pipeline
+        #targetNamespace: p-v2nzs-pipeline
+        targetNamespace: ${CICD_GIT_REPO_NAME}
         answers:
           # 基礎pipeline參數
           git.url: ${CICD_GIT_URL}
@@ -40,7 +41,8 @@ stages:
           catalogTemplate: cattle-global-data:iii-dev-charts3-db
           version: 0.1.0
           name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
-          targetNamespace: p-v2nzs-pipeline
+          #targetNamespace: p-v2nzs-pipeline
+          targetNamespace: ${CICD_GIT_REPO_NAME}
           answers:
             # 這裡是為了50與140環境測試
             git.host: "10.50.1.53"
