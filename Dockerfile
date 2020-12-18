@@ -7,6 +7,7 @@ RUN apt install -y python3-dev default-libmysqlclient-dev
 
 # 使用者程式所需的額外套件清單
 COPY python套件安裝清單 /tmp/requirements.txt
-RUN pip install  -i https://pypi.douban.com/simple --no-cache-dir -r /tmp/requirements.txt
+# RUN pip install  -i https://pypi.douban.com/simple --no-cache-dir -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 COPY ./app /app
