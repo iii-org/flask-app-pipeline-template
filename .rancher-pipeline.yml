@@ -33,6 +33,7 @@ stages:
           web.tag: latest
           checkmarx.enabled: false
           newman.enabled: false
+          apieditor.enabled: true
   
   # (選擇性)部屬使用者的資料庫
   - name: Deploy db
