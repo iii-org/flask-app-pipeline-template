@@ -40,7 +40,7 @@ stages:
       - applyAppConfig:
           catalogTemplate: cattle-global-data:iii-dev-charts3-db
           version: 0.1.0
-          name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}
+          name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-db
           #targetNamespace: p-v2nzs-pipeline
           targetNamespace: ${CICD_GIT_REPO_NAME}
           answers:
