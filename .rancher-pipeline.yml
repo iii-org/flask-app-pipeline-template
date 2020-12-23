@@ -31,7 +31,7 @@ stages:
           # 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
           web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
           web.tag: latest
-          checkmarx.enabled: true
+          checkmarx.enabled: false
           checkmarx.version: "latest"
           newman.enabled: false
           apieditor.enabled: true
