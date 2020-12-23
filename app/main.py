@@ -1,9 +1,14 @@
 from flask import Flask
+import os
+
+commitID = os.getenv('commitID', "test1")
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "iii-flask-app-pipeline-template"
+    global commitID
+    return "iii-flask-app-pipeline-template"+commitID
 
 if __name__ == "__main__":
     # Only for debugging while developing
