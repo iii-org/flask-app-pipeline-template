@@ -14,7 +14,7 @@ def hello():
 
 @app.route("/log")
 def log():
-    global commitID, bracnh, repoName
+    global commitID, branch, repoName
     return "repoName: {repoName}, branch: {branch}, commitID: {commitID}".format(repoName, branch, commitID) 
 
 if __name__ == "__main__":
