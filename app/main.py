@@ -1,7 +1,9 @@
 from flask import Flask
 import os
 
-commitID = os.getenv('commitID', "test1")
+commitID = os.getenv('commitID', "cant get commitID")
+branch = os.getenv('branch'', "cant get repo branch")
+repoName = os.getenv('repoName', 'cant get repoName')
 
 app = Flask(__name__)
 
@@ -9,6 +11,11 @@ app = Flask(__name__)
 def hello():
     global commitID
     return "iii-flask-app-pipeline-template"+commitID
+
+@app.route("/log")
+def log():
+    global commitID, bracnh, repoName
+    return "repoName: {repoName}, branch: {branch}, commitID: {commitID}".format(repoName, branch, commitID) 
 
 if __name__ == "__main__":
     # Only for debugging while developing
