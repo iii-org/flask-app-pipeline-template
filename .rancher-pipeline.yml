@@ -5,7 +5,7 @@ stages:
     - publishImageConfig:
         dockerfilePath: ./Dockerfile
         buildContext: .
-        tag: app/${CICD_GIT_REPO_NAME}-web:latest
+        tag: ${CICD_GIT_REPO_NAME}/web:latest
         pushRemote: true
         registry: 10.50.1.63:5443
       env:
@@ -29,7 +29,7 @@ stages:
           # web參數設定
           web.type: uwsgi-flask
           # 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
-          web.image: 10.50.1.63:5443/app/${CICD_GIT_REPO_NAME}-web
+          web.image: 10.50.1.63:5443/${CICD_GIT_REPO_NAME}/web
           web.tag: latest
           checkmarx.enabled: false
           checkmarx.version: "latest"
